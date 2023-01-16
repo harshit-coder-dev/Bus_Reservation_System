@@ -26,7 +26,18 @@
 * Reservation Module
 * Feedback Module
 
+<!-- ============================================  FEATURES ======================================================  -->
+## Features
 
+* Customer and Admin authentication & validation with session uuid having.
+* Admin Features:
+    * Administrator Role of the entire application
+    * Only registered admins with valid session token can add/update/delete customer from main database
+    * Admin can access the details of different customers and trip bookings
+* Customer Features:
+    * Registering themselves with application, and logging in to get the valid session token
+    * Viewing list of available Route and available Bus for a trip
+    * Only logged in user can access his reservations, profile updation and other features.
         
 
 ## Installation & Run
