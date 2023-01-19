@@ -3,18 +3,19 @@ package com.masai.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.masai.respository.RouteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.entities.Route;
 import com.masai.exceptions.RouteException;
-import com.masai.respository.RouteDao;;
+;
 
 @Service
 public class RouteServiceImpl implements RouteService{
 
 	@Autowired
-	private RouteDao Routedao;
+	private RouteRepo Routedao;
 
 	@Override
 	public Route AddRout(Route route) throws RouteException {
