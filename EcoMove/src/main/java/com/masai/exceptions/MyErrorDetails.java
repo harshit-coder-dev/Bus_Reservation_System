@@ -1,19 +1,17 @@
 package com.masai.exceptions;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 public class MyErrorDetails {
 
     private LocalDateTime timeStamp;
     private String message;
-    private String details;
+    private String errorDetails;
 
 }
