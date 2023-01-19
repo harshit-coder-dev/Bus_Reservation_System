@@ -14,4 +14,7 @@ public class MyErrorDetails {
     private String message;
     private String errorDetails;
 
+	public void setDetails(String details) {
+		this.details = details;
+	}
 }
