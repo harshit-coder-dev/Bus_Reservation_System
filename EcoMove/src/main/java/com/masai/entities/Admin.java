@@ -20,19 +20,22 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Admin {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer adminId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer adminId;
 
-	@NotNull(message = "Name cannot be null!")
-	@NotBlank(message = "Name connot be blank!")
-	private String adminUsername;
+    @NotNull(message = "Name cannot be null!")
+    @NotBlank(message = "Name connot be blank!")
+    private String adminUsername;
 
-	@NotNull(message = "Password cannot be null!")
-	@NotBlank(message = "Password cannot be blank!")
-	@Pattern(regexp = "[A-Za-z0-9!@#$%^&*_]{8,15}",
-	message = "Password must be 8-15 characters in length and can include"
-			+ " alphanumerics and special characters")
-	private String adminPassword;
+    @NotNull(message = "Password cannot be null!")
+    @NotBlank(message = "Password cannot be blank!")
+    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", message = "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters")
+    private String adminPassword;
+
+    @NotNull(message = "Mobile number cannot be null!")
+    @NotBlank(message = "Mobile number cannot be blank!")
+    @Pattern(regexp = "[7986]{1}[0-9]{9}", message = "Enter valid 10 digit mobile number")
+    private String mobile;
 
 }
