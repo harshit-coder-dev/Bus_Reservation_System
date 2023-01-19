@@ -18,22 +18,17 @@ public class GlobalExceptionHandler {
         errorDetails.setTimeStamp(LocalDateTime.now());
         errorDetails.setMessage(adminException.getMessage());
         errorDetails.setErrorDetails(req.getDescription(false));
-
-
         return new ResponseEntity<MyErrorDetails>(errorDetails, HttpStatus.BAD_GATEWAY);
     }
 
     @ExceptionHandler(LoginException.class)
     public ResponseEntity<MyErrorDetails> loginExceptionHandler(LoginException loginException, WebRequest req) {
 
-
         MyErrorDetails errorDetails = new MyErrorDetails();
         errorDetails.setTimeStamp(LocalDateTime.now());
         errorDetails.setMessage(loginException.getMessage());
         errorDetails.setErrorDetails(req.getDescription(false));
-
         return new ResponseEntity<MyErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
-
     }
 
     @ExceptionHandler(UserException.class)
@@ -43,14 +38,11 @@ public class GlobalExceptionHandler {
         errorDetails.setTimeStamp(LocalDateTime.now());
         errorDetails.setMessage(userException.getMessage());
         errorDetails.setErrorDetails(req.getDescription(false));
-
-
         return new ResponseEntity<MyErrorDetails>(errorDetails, HttpStatus.BAD_GATEWAY);
     }
 
     @ExceptionHandler(BusException.class)
     public ResponseEntity<MyErrorDetails> busExceptionHandler(BusException busException, WebRequest req) {
-
 
         MyErrorDetails errorDetails = new MyErrorDetails();
         errorDetails.setTimeStamp(LocalDateTime.now());
@@ -58,6 +50,5 @@ public class GlobalExceptionHandler {
         errorDetails.setErrorDetails(req.getDescription(false));
 
         return new ResponseEntity<MyErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
-
     }
 }
