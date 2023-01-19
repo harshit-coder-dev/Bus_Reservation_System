@@ -34,20 +34,19 @@ public class User {
 	private Integer userId;
 
 	@NotNull(message = "userName cannot be null!")
-	@NotBlank(message = "userName connot be blank!")
+	@Size(min = 5, max = 15, message = "UserName should not be less than size 5 and more than 15.")
 	private String userName;
 	
 	@NotNull(message = "Name cannot be null!")
-	@NotBlank(message = "Name connot be blank!")
+	@Size(min = 2, max = 15, message = "FirstName should not be less than size 2 and more than 15.")
 	private String firstName;
 
-	@NotNull(message = "Name cannot be null!")
-	@NotBlank(message = "Name connot be blank!")
+
 	private String lastName;
 
 	@NotNull(message = "Password cannot be null!")
 	@NotBlank(message = "Password cannot be blank!")
-	@Pattern(regexp = "[A-Za-z0-9!@#$%^&*_]{8,15}", message = "Password must be 8-15 characters in length and can include alphanumerics and special characters")
+	@Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", message = "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters")
 	private String password;
 
 	@NotNull(message = "Mobile number cannot be null!")
@@ -56,7 +55,8 @@ public class User {
 	@Size(min = 10, max = 10)
 	private String Contact ;
 
-	@Email
+	@NotNull(message = "Email cannot be null!")
+	@Email(message = "Invalid Email address.")
 	private String email;
 
 	@JsonIgnore
