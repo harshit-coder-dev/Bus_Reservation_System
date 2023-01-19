@@ -8,6 +8,7 @@ public class EcoMoveApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EcoMoveApplication.class, args);
+		System.out.println("run");
 	}
 
 }
