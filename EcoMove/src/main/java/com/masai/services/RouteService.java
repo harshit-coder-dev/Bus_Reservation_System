@@ -9,11 +9,15 @@ public interface RouteService {
 
 	public Route AddRout(Route route) throws RouteException;
 	
+	
 	public Route UpdateRoute(Route route) throws RouteException;
+	
 	
 	public Route DeleteRoute(Integer RouteId) throws RouteException;
 	
+	
 	public Route ViewRoute(Integer RouteId) throws RouteException;
+	
 	
 	public List<Route> ViewAllRoute() throws RouteException;
 }
