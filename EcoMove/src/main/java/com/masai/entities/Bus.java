@@ -64,6 +64,7 @@ public class Bus {
 
 	@ManyToOne
 	private Route route;
+
 	
 
 }
