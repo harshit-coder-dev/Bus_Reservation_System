@@ -10,10 +10,12 @@ import com.masai.respository.BusRepo;
 import com.masai.respository.CurrentAdminRepo;
 import com.masai.respository.RouteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BusServiceImpl implements BusService {
 
     @Autowired
