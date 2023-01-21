@@ -34,11 +34,11 @@ public class Route {
 	
     @NotNull(message = "Start point cannot be null!")
     @NotBlank(message = "Start point cannot be blank!")
-    private String routeFrom;
+    private String source;
 
     @NotNull(message = "Destination point cannot be null!")
     @NotBlank(message = "Destination point cannot be blank!")
-    private String routeTo;
+    private String destination;
     
     @NotNull(message = "Distance cannot be null!")
     private Integer distance;

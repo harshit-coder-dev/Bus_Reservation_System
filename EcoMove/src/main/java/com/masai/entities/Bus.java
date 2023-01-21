@@ -39,11 +39,11 @@ public class Bus {
 	
 	@NotNull(message = "Start point cannot be null!")
 	@NotBlank(message = "Start point cannot be blank!")
-	private String source;
+	private String routeFrom;
 	
 	@NotNull(message = "Destination point cannot be null!")
 	@NotBlank(message = "Destination point cannot be blank!")
-	private String destination;
+	private String routeTo;
 
 	@NotNull(message = "Arrival time cannot be null!")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)

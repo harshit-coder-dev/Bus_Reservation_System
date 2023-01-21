@@ -35,7 +35,7 @@ public class BusServiceImpl implements BusService {
         if (loggedInAdmin == null) {
             throw new AdminException("Please provide Registered Admin to add bus!");
         }
-        Route route = routeRepo.findByRouteFromSourceToDestination(bus.getSource(), bus.getDestination());
+        Route route = routeRepo.findByRouteFromSourceToDestination(bus.getRouteFrom(), bus.getRouteTo());
         System.out.println(route);
         if (route != null) {
             route.getBusList().add(bus);
@@ -56,7 +56,7 @@ public class BusServiceImpl implements BusService {
             if (opt.isPresent()) {
                 Bus existingBus = opt.get();
 
-                Route route = routeRepo.findByRouteFromSourceToDestination(bus.getSource(), bus.getDestination());
+                Route route = routeRepo.findByRouteFromSourceToDestination(bus.getRouteFrom(), bus.getRouteTo());
                 if (route != null) {
                     List<Bus> list = route.getBusList();
                     list.add(bus);

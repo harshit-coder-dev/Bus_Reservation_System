@@ -9,7 +9,7 @@ import com.masai.exceptions.LoginException;
 import com.masai.respository.AdminRepo;
 import com.masai.respository.CurrentAdminRepo;
 import com.masai.respository.CurrentUserRepo;
-import com.masai.respository.UserRepository;
+import com.masai.respository.UserDao;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ import java.util.Optional;
 public class LoginServiceImpl implements LoginService {
 
     @Autowired
-    private UserRepository userRepo;
+    private UserDao userRepo;
 
     @Autowired
     private CurrentUserRepo currentUserRepo;
@@ -34,7 +34,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String logIntoUserAccount(LoginDTO dto) throws LoginException {
-        User existingUser = userRepo.findByMobileNumber(dto.getMobileNo());
+        User existingUser = userRepo.findByContact(dto.getMobileNo());
         if (existingUser == null) {
             throw new LoginException("Please Enter a valid mobile number");
         }

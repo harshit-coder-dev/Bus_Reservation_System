@@ -4,23 +4,20 @@ import java.time.LocalDateTime;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Data
 @Entity
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CurrentAdminSession {
 
 	@Id
-	@Column(unique = true)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer adminId;
 
-	private String adminUID;
+	private String adminUid;
 
 	private LocalDateTime dateTime;
 }
