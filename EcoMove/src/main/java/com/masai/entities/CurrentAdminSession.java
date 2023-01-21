@@ -17,7 +17,7 @@ public class CurrentAdminSession {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer adminId;
 
-	private String adminUid;
+	private String adminUID;
 
 	private LocalDateTime dateTime;
 }

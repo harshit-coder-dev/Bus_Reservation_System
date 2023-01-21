@@ -57,7 +57,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String logOutFromUserAccount(String key) throws LoginException {
-        CurrentUserSession currentUserSession = currentUserRepo.findByUseruid(key);
+        CurrentUserSession currentUserSession = currentUserRepo.findByUserUID(key);
         if (currentUserSession != null) {
             currentUserRepo.delete(currentUserSession);
             return "Logged Out !, ThankYou for Service";
@@ -89,7 +89,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String logOutFromAdminAccount(String key) throws LoginException {
-        CurrentAdminSession currentAdminSession = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession currentAdminSession = currentAdminRepo.findByAdminUID(key);
         if (currentAdminSession != null) {
             currentAdminRepo.delete(currentAdminSession);
             return "Logged Out !, ThankYou for Service";

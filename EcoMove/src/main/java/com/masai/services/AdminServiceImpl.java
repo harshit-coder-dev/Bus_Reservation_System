@@ -28,7 +28,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin updateAdmin(Admin admin, String key) {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
         if (loggedInAdmin == null) {
             throw new AdminException("Please provide a registered admin");
         }

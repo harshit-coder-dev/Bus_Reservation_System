@@ -35,7 +35,7 @@ public class FeedbackServiceImpl implements FeedbackService{
 	@Override
 	public Feedback addFeedback(Feedback feedback, Integer busId, String key) throws BusException, UserException {
 		// TODO Auto-generated method stub
-		CurrentUserSession logedinuser =cuserRepo.findByUseruid(key);
+		CurrentUserSession logedinuser =cuserRepo.findByUserUID(key);
 		if(logedinuser==null) throw new UserException("Authentication Failed!");
 		Optional<User> opt=userRepo.findById(logedinuser.getUserId());
 		if(opt.isEmpty()) throw new UserException("No user found!");
@@ -58,7 +58,7 @@ public class FeedbackServiceImpl implements FeedbackService{
 	public Feedback updateFeedback(Feedback feedback, String Key) throws FeedbackException, UserException {
 		// TODO Auto-generated method stub
 		
-		CurrentUserSession logedinuser =cuserRepo.findByUseruid(Key);
+		CurrentUserSession logedinuser =cuserRepo.findByUserUID(Key);
 		if(logedinuser==null) throw new UserException("Authentication Failed!");
 		Optional<User> opt=userRepo.findById(logedinuser.getUserId());
 		if(opt.isEmpty()) throw new UserException("No user found!");

@@ -53,7 +53,7 @@ public class User {
 	@NotBlank(message = "Mobile number cannot be blank!")
 	@Pattern(regexp = "[6789]{1}[0-9]{9}", message = "Enter valid 10 digit mobile number")
 	@Size(min = 10, max = 10)
-	private String Contact ;
+	private String contact;
 
 	@NotNull(message = "Email cannot be null!")
 	@Email(message = "Invalid Email address.")

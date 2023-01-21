@@ -30,7 +30,7 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Bus addBus(Bus bus, String key) throws BusException, AdminException {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
 
         if (loggedInAdmin == null) {
             throw new AdminException("Please provide Registered Admin to add bus!");
@@ -47,7 +47,7 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Bus updateBus(Bus bus, String key) throws BusException, AdminException, RouteException {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
 
         if (loggedInAdmin == null) {
             throw new AdminException("Admin is not Logged in or Incorrect Details");
@@ -75,7 +75,7 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Bus deleteBus(int busId, String key) throws BusException, AdminException, RouteException {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
         if (loggedInAdmin == null) {
             throw new AdminException("Admin is not Logged in or Incorrect Details");
         } else {

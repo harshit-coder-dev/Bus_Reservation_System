@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CurrentAdminRepo extends JpaRepository<CurrentAdminSession,Integer> {
 
-    public  CurrentAdminSession  findByAdminUid(String adminUid);
+    public  CurrentAdminSession  findByAdminUID(String adminUid);
 }
