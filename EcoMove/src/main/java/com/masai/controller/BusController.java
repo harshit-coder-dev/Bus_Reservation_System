@@ -1,11 +1,13 @@
 package com.masai.controller;
 
+import com.masai.entities.Admin;
 import com.masai.entities.Bus;
 import com.masai.exceptions.AdminException;
 import com.masai.exceptions.BusException;
 import com.masai.exceptions.RouteException;
 import com.masai.services.BusService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +18,13 @@ import java.util.List;
 @RestController
 public class BusController {
 
+	@Autowired
+    private Bus bus;
+	 
     @Autowired
     private BusService busService;
+    
+    
 
     @PostMapping("/buses")
     public ResponseEntity<Bus> createBus(@Valid @RequestBody Bus bus, @RequestParam(required = false) String key) throws BusException, RouteException, AdminException {

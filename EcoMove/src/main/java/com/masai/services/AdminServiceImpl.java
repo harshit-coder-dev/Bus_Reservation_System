@@ -15,7 +15,8 @@ public class AdminServiceImpl implements AdminService {
     private AdminRepo adminRepo;
 
     @Autowired
-    private CurrentAdminRepo currentAdminRepo;
+    private Admin admin;
+    //private CurrentAdminRepo currentAdminRepo;
 
     @Override
     public Admin createAdmin(Admin admin) {
@@ -28,12 +29,13 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin updateAdmin(Admin admin, String key) {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
-        if (loggedInAdmin == null) {
-            throw new AdminException("Please provide a registered admin");
-        }
-        if (loggedInAdmin.getAdminId() == admin.getAdminId()) {
-            return adminRepo.save(admin);
-        } else throw new AdminException("Invalid Admin Details, please login first");
+//        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+//        if (loggedInAdmin == null) {
+//            throw new AdminException("Please provide a registered admin");
+//        }
+//        if (loggedInAdmin.getAdminId() == admin.getAdminId()) {
+//            return adminRepo.save(admin);
+//        } else throw new AdminException("Invalid Admin Details, please login first");
+    	return null;
     }
 }

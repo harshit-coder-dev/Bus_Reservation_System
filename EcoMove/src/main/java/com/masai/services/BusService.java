@@ -7,6 +7,10 @@ import com.masai.exceptions.RouteException;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+
+@Service
 public interface BusService {
 
     public Bus addBus(Bus bus, String key) throws BusException, AdminException;

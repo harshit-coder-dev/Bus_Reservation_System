@@ -16,6 +16,9 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
+    
+    @Autowired
+    private Admin admin;
 
     //	http://localhost:8888/portal/admin
     @PostMapping("/admin")
