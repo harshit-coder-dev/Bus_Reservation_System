@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.masai.entities.Route;
 import com.masai.exceptions.RouteException;
-;
 
 @Service
 public class RouteServiceImpl implements RouteService{
