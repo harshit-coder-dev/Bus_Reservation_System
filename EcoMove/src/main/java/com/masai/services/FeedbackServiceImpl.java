@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.entities.Bus;
 import com.masai.entities.CurrentUserSession;
@@ -16,12 +17,13 @@ import com.masai.exceptions.UserException;
 import com.masai.respository.BusRepo;
 import com.masai.respository.CurrentUserRepo;
 import com.masai.respository.FeedbackDao;
-import com.masai.respository.UserRepository;
-
+import com.masai.respository.UserDao;
+//import com.masai.respository.UserRepository;
+@Service
 public class FeedbackServiceImpl implements FeedbackService{
 
 	@Autowired
-	private UserRepository userRepo;
+	private UserDao userRepo;
 	
 	@Autowired
 	private FeedbackDao fdao;

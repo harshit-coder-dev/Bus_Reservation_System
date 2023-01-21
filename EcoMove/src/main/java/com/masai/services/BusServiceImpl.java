@@ -30,12 +30,12 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Bus addBus(Bus bus, String key) throws BusException, AdminException {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
 
         if (loggedInAdmin == null) {
             throw new AdminException("Please provide Registered Admin to add bus!");
         }
-        Route route = routeRepo.findByRouteFromSourceToDestination(bus.getSource(), bus.getDestination());
+        Route route = routeRepo.findByrouteFromAndrouteTo(bus.getSource(), bus.getDestination());
         System.out.println(route);
         if (route != null) {
             route.getBusList().add(bus);
@@ -47,7 +47,7 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Bus updateBus(Bus bus, String key) throws BusException, AdminException, RouteException {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
 
         if (loggedInAdmin == null) {
             throw new AdminException("Admin is not Logged in or Incorrect Details");
@@ -56,7 +56,7 @@ public class BusServiceImpl implements BusService {
             if (opt.isPresent()) {
                 Bus existingBus = opt.get();
 
-                Route route = routeRepo.findByRouteFromSourceToDestination(bus.getSource(), bus.getDestination());
+                Route route = routeRepo.findByrouteFromAndrouteTo(bus.getSource(), bus.getDestination());
                 if (route != null) {
                     List<Bus> list = route.getBusList();
                     list.add(bus);
@@ -75,7 +75,7 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Bus deleteBus(int busId, String key) throws BusException, AdminException, RouteException {
-        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUid(key);
+        CurrentAdminSession loggedInAdmin = currentAdminRepo.findByAdminUID(key);
         if (loggedInAdmin == null) {
             throw new AdminException("Admin is not Logged in or Incorrect Details");
         } else {

@@ -15,7 +15,8 @@ import com.masai.entities.ReservationDTO;
 import com.masai.entities.User;
 import com.masai.exceptions.ReservationException;
 import com.masai.respository.ReservationDao;
-import com.masai.respository.UserRepository;
+import com.masai.respository.UserDao;
+//import com.masai.respository.UserRepository;
 import com.masai.respository.BusDao;
 import com.masai.respository.BusRepo;
 @Service
@@ -25,7 +26,7 @@ public class ReservationServiceImplementation implements ReservationService{
 	private ReservationDao reservationdao;
 	
 	@Autowired
-	private UserRepository userdao;
+	private UserDao userdao;
 	
 	@Autowired
 	private BusRepo busdao;
