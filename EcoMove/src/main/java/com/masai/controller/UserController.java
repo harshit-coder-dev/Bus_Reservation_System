@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.masai.entities.User;
 import com.masai.exceptions.AdminException;
 import com.masai.exceptions.UserException;
-import com.masai.service.UserService;
+import com.masai.services.UserService;
 
 @RestController
 public class UserController {
