@@ -29,7 +29,7 @@ import lombok.Setter;
 public class Route {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer routeId;
 	
     @NotNull(message = "Start point cannot be null!")

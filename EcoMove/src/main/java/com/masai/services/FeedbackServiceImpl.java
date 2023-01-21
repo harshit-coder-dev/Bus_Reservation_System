@@ -5,7 +5,11 @@ import java.util.List;
 import java.util.Optional;
 
 import com.masai.respository.UserDao;
+
+import io.swagger.v3.oas.annotations.servers.Server;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.entities.Bus;
 import com.masai.entities.CurrentUserSession;
@@ -18,6 +22,7 @@ import com.masai.respository.BusRepo;
 import com.masai.respository.CurrentUserRepo;
 import com.masai.respository.FeedbackDao;
 
+@Service
 public class FeedbackServiceImpl implements FeedbackService{
 
 	@Autowired
