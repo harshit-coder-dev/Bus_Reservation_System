@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import com.masai.respository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.masai.entities.Bus;
@@ -16,12 +17,11 @@ import com.masai.exceptions.UserException;
 import com.masai.respository.BusRepo;
 import com.masai.respository.CurrentUserRepo;
 import com.masai.respository.FeedbackDao;
-import com.masai.respository.UserRepository;
 
 public class FeedbackServiceImpl implements FeedbackService{
 
 	@Autowired
-	private UserRepository userRepo;
+	private UserDao userRepo;
 	
 	@Autowired
 	private FeedbackDao fdao;
