@@ -1,5 +1,6 @@
 package com.masai.entities;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.persistence.Entity;
@@ -11,59 +12,70 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+<<<<<<< HEAD
+=======
+import lombok.*;
+>>>>>>> 5eda6a65421aaf191006fe83ac1468aa5ec28ba9
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Data
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Entity
 public class Bus {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer busId;
-	
-	@NotNull(message = "Bus name cannot be null!")
-	private String busName;
-	
-	@NotNull(message = "Bus driver name cannot be null!")
-	private String driverName;
-	
-	@NotNull(message = "Bus Type cannot be null!")
-	private String busType;
-	
-	@NotNull(message = "Start point cannot be null!")
-	@NotBlank(message = "Start point cannot be blank!")
-	private String routeFrom;
-	
-	@NotNull(message = "Destination point cannot be null!")
-	@NotBlank(message = "Destination point cannot be blank!")
-	private String routeTo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer busId;
 
+<<<<<<< HEAD
 	@NotNull(message = "Arrival time cannot be null!")
 	private String arrivalTime;
 
 	@NotNull(message = "Departure time cannot be null!")
 	private String departureTime;
+=======
+    @NotNull(message = "Bus name cannot be null!")
+    private String busName;
 
-	@NotNull(message = "Total Seats cannot be null!")
-	private Integer seats;
+    @NotNull(message = "Bus driver name cannot be null!")
+    private String driverName;
+>>>>>>> 5eda6a65421aaf191006fe83ac1468aa5ec28ba9
 
-	@NotNull(message = "Available seats cannot be null!")
-	private Integer availableSeats;
+    @NotNull(message = "Bus Type cannot be null!")
+    private String busType;
 
-	@NotNull(message = "Fare cannot be null!")
-	private Integer farePerSeat;  // self added field
+    @NotNull(message = "Start point cannot be null!")
+    @NotBlank(message = "Start point cannot be blank!")
+    private String routeFrom;
 
-	@ManyToOne
-	private Route route;
+    @NotNull(message = "Destination point cannot be null!")
+    @NotBlank(message = "Destination point cannot be blank!")
+    private String routeTo;
 
-	
+    @NotNull(message = "Arrival time cannot be null!")
+    private String arrivalTime;
+
+    @NotNull(message = "Departure time cannot be null!")
+    private String departureTime;
+
+    @NotNull(message = "Total Seats cannot be null!")
+    private Integer seats;
+
+    @NotNull(message = "Available seats cannot be null!")
+    private Integer availableSeats;
+
+    @NotNull(message = "Fare cannot be null!")
+    private Integer farePerSeat;  // self added field
+
+    @NotNull(message = "Bus journey date cannot be null!")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate busJourneyDate;
+
+    @ManyToOne
+    private Route route;
+
 
 }

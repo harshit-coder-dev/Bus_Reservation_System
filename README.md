@@ -1,11 +1,13 @@
 
-# Bus Reservation System 
+# Bus Reservation System(EcoMove Bus) 
 <img src="https://media.tenor.com/-r7rOH-I6V8AAAAM/india-overload.gif"  style = "width:90%; height:450px" />
 
-* Bus Reservation System is a full stack project where REST API's are developed using Java and Spring Boot technologies and UI or frontend is developed using HTML,CSS,     JavaScript
+* Bus Reservation System is a full stack project where REST API's are developed using Java and Spring Boot technologies and UI or frontend is developed using HTML,CSS,JavaScript
 *  These API's performs all the fundamental CRUD operations of any Bus Reservation Application platform with user validation at every step.
 *  Our frontend application consumes these API's and allows customer to perform all the operations easily with user friendly UI.
-* This project is developed by team of 4 Back-end Developers during project week in Masai School. 
+* This project is developed by team of 5 Back-end Developers during project week in Masai School. 
+
+<!-- ============================================  TECH STACK ======================================================  -->
 
 ## Tech Stack
 
@@ -15,16 +17,21 @@
 * Spring Data JPA
 * Hibernate
 * MySQL
+* Postman
+* Swagger UI
 
+<!-- ============================================  MODULES ======================================================  -->
 
 ## Modules
 
+* Login, Logout Module
 * Admin Module
 * User Module
 * Route Module
 * Bus Module
 * Reservation Module
 * Feedback Module
+
 
 <!-- ============================================  FEATURES ======================================================  -->
 ## Features
@@ -40,33 +47,52 @@
     * Only logged in user can access his reservations, profile updation and other features.
         
 
+
+
+# 👉 [Click here for Vedio Presentation](https://drive.google.com/drive/folders/1XSkfZn0PNHGS_G8e5Vhg29dGoLHnat-g?usp=sharing) to get better understanding of the application.
+
 ## Installation & Run
 
-* Before using the web application or running the API server, you should update the database config inside the [application.properties](https://github.com/Shivaprasad-sBhat/posh-fact-2211/blob/main/BusReservation/src/main/resources/application.properties) file. 
+* Before using the web application or running the API server, you should update the database config inside the [application.properties](https://github.com/Hartumpa/plant-grain-8335/blob/main/EcoMove/src/main/resources/application.properties) file. 
 * Update the port number, username and password as per your local database config.
 
-```
-    server.port=8818
 
-    spring.datasource.url=jdbc:mysql://localhost:3306/bus_reservation_db
+    server.port=8884
+
+    spring.datasource.url=jdbc:mysql://localhost:3306/ecomove
     spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
     spring.datasource.username=root
     spring.datasource.password=root
 
-```
 * Now you can perform all the operations by using either our web application or Swagger.
 
 ## API Root Endpoint
-```
-`http://localhost:8818/`
-```
 
-```
-`http://localhost:8818/swagger-ui.html`
-```
+https://localhost:8884/
+  
+http://localhost:8884/swagger-ui/
 
 
+## Following pictures will help to understand flow of the Application and API's of Bus Reservation Portal System
 
+## Admin Module
+<img width="944" alt="Screenshot (2377)" src="plant-grain-8335\Images\Admin_Module_Pic.png">
+
+## User Module
+<img width="938" alt="Screenshot (2382)" src="plant-grain-8335\Images\UserModule.png">
+
+## Route Module
+<img width="941" alt="Screenshot (2381)" src="plant-grain-8335\Images\RouteModule.png">
+
+## Bus Module
+<img width="941" alt="Screenshot (2380)" src="plant-grain-8335\Images\BusModule.png">
+
+
+## Reservation Module
+<img width="940" alt="Screenshot (2379)" src="plant-grain-8335\Images\ReservationModule.png">
+
+## Feedback Module
+<img width="943" alt="Screenshot (2378)" src="plant-grain-8335\Images\FeedBackModule.png">
    
 
  

@@ -8,13 +8,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Data
 @Entity
+@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,6 +33,6 @@ public class Admin {
     @NotNull(message = "Mobile number cannot be null!")
     @NotBlank(message = "Mobile number cannot be blank!")
     @Pattern(regexp = "[7986]{1}[0-9]{9}", message = "Enter valid 10 digit mobile number")
-    private String mobile;
+    private String mobileNumber;
 
 }
