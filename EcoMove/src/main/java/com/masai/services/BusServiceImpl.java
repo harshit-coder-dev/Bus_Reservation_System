@@ -56,13 +56,14 @@ public class BusServiceImpl implements BusService {
             Optional<Bus> opt = busRepo.findById(bus.getBusId());
             if (opt.isPresent()) {
                 Bus existingBus = opt.get();
-                if (existingBus.getAvailableSeats() != existingBus.getSeats())
-                    throw new BusException("Bus details already exist..!");
                 Route route = routeRepo.findByRouteFromAndRouteTo(bus.getRouteFrom(), bus.getRouteTo());
 
                 if (route == null) throw new BusException("Provided route in not valid...!");
+                List<Bus> list = route.getBusList();
+                list.add(bus);
                 bus.setRoute(route);
-                return busRepo.save(bus);
+                busRepo.save(bus);
+                return existingBus;
             } else {
                 throw new BusException("No Bus found with given details");
             }
