@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdminDTO {
+public class AdminLoginDTO {
 
     @NotNull(message = "Mobile number should not be null")
     @NotBlank(message = "Mobile Number should not be blank...!")

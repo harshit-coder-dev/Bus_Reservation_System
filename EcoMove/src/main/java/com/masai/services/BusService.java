@@ -13,9 +13,9 @@ public interface BusService {
 
     public Bus updateBus(Bus bus, String key) throws BusException, AdminException, RouteException;
 
-    public Bus deleteBus(int busId, String key) throws BusException, AdminException, RouteException;
+    public Bus deleteBus(Integer busId, String key) throws BusException, AdminException, RouteException;
 
-    public Bus viewBus(int busId) throws BusException;
+    public Bus viewBus(Integer busId) throws BusException;
 
     public List<Bus> viewBusByType(String busType) throws BusException;
 

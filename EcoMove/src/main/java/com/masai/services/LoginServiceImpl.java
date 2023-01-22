@@ -1,15 +1,16 @@
 package com.masai.services;
 
-import com.masai.DTO.LoginDTO;
+import com.masai.DTO.AdminLoginDTO;
+import com.masai.DTO.UserLoginDTO;
 import com.masai.entities.Admin;
 import com.masai.entities.CurrentAdminSession;
 import com.masai.entities.CurrentUserSession;
 import com.masai.entities.User;
 import com.masai.exceptions.LoginException;
 import com.masai.respository.AdminRepo;
-import com.masai.respository.CurrentAdminRepo;
-import com.masai.respository.CurrentUserRepo;
+import com.masai.respository.AdminSessionDao;
 import com.masai.respository.UserDao;
+import com.masai.respository.UserSessionDao;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,75 +25,96 @@ public class LoginServiceImpl implements LoginService {
     private UserDao userRepo;
 
     @Autowired
-    private CurrentUserRepo currentUserRepo;
+    private UserSessionDao userSessionDao;
 
     @Autowired
     private AdminRepo adminRepo;
 
     @Autowired
-    private CurrentAdminRepo currentAdminRepo;
+    private AdminSessionDao adminSessionDao;
+
 
     @Override
-    public String logIntoUserAccount(LoginDTO dto) throws LoginException {
-        User existingUser = userRepo.findByContact(dto.getMobileNo());
-        if (existingUser == null) {
-            throw new LoginException("Please Enter a valid mobile number");
-        }
-        Optional<CurrentUserSession> validUser = currentUserRepo.findById(existingUser.getUserId());
+    public CurrentAdminSession logIntoAdminAccount(AdminLoginDTO dto) throws LoginException {
+        Admin existingAdmin = adminRepo.findByMobileNumber(dto.getMobileNumber());
 
-        if (validUser.isPresent()) {
-            throw new LoginException("User already Logged In with this number");
-        }
-        if (existingUser.getPassword().equals(dto.getPassword())) {
-            String key = RandomString.make(6);
+        if (existingAdmin == null) throw new LoginException("This is not valid mobile number...!");
 
-            CurrentUserSession currentUserSession = new CurrentUserSession();
-            currentUserSession.setUserUID(key);
-            currentUserSession.setDateTime(LocalDateTime.now());
-            currentUserRepo.save(currentUserSession);
-            return currentUserRepo.toString();
-        } else
-            throw new LoginException("Please Enter a valid password");
-    }
 
-    @Override
-    public String logOutFromUserAccount(String key) throws LoginException {
-        CurrentUserSession currentUserSession = currentUserRepo.findByUserUID(key);
-        if (currentUserSession != null) {
-            currentUserRepo.delete(currentUserSession);
-            return "Logged Out !, ThankYou for Service";
-        } else throw new LoginException("User Not Logged In with this key");
-    }
+        Optional<CurrentAdminSession> validAdminSessionOpt = adminSessionDao.findById(existingAdmin.getAdminId());
 
-    @Override
-    public String logIntoAdminAccount(LoginDTO dto) throws LoginException {
-        Admin existingAdmin = adminRepo.findByMobile(dto.getMobileNo());
-        if (existingAdmin == null) {
-            throw new LoginException("Please Enter a valid mobile number");
+
+        if (validAdminSessionOpt.isPresent()) {
+
+            throw new LoginException("Admin already Log-In with this number..!" + validAdminSessionOpt);
         }
-        Optional<CurrentAdminSession> validAdmin = currentAdminRepo.findById(existingAdmin.getAdminId());
-        if (validAdmin.isPresent()) {
-            throw new LoginException("Admin already Logged In with this number");
-        }
-        if (existingAdmin.getAdminPassword().equals(dto.getPassword())) {
+
+        if (existingAdmin.getAdminPassword().equals(dto.getAdminPassword())) {
 
             String key = RandomString.make(6);
 
             CurrentAdminSession currentAdminSession = new CurrentAdminSession(existingAdmin.getAdminId(), key, LocalDateTime.now());
 
-            currentAdminRepo.save(currentAdminSession);
+            adminSessionDao.save(currentAdminSession);
 
-            return currentAdminSession.toString();
+            return currentAdminSession;
         } else
-            throw new LoginException("Please Enter a valid password");
+            throw new LoginException("Please Enter a valid password!");
     }
 
     @Override
     public String logOutFromAdminAccount(String key) throws LoginException {
-        CurrentAdminSession currentAdminSession = currentAdminRepo.findByAdminUID(key);
-        if (currentAdminSession != null) {
-            currentAdminRepo.delete(currentAdminSession);
-            return "Logged Out !, ThankYou for Service";
-        } else throw new LoginException("User Not Logged In with this key");
+        CurrentAdminSession validAdminSession = adminSessionDao.findByUuid(key);
+
+        if (validAdminSession == null) {
+            throw new LoginException("Admin Not Logged In with this number" + validAdminSession);
+
+        }
+
+        adminSessionDao.delete(validAdminSession);
+
+        return "Admin Logged Out Succesfully...!";
+    }
+
+    @Override
+    public CurrentUserSession logIntoUserAccount(UserLoginDTO dto) throws LoginException {
+        User existingUser = userRepo.findByMobileNumber(dto.getMobileNumber());
+
+        if (existingUser == null) throw new LoginException("This is not valid mobile number...!");
+
+
+        Optional<CurrentUserSession> validUserSessionOpt = userSessionDao.findById(existingUser.getUserId());
+
+
+        if (validUserSessionOpt.isPresent()) {
+
+            throw new LoginException("user already Log-In with this number..!" + validUserSessionOpt);
+        }
+
+        if (existingUser.getPassword().equals(dto.getPassword())) {
+
+            String key = RandomString.make(6);
+
+            CurrentUserSession currentUserSession = new CurrentUserSession(existingUser.getUserId(), key, LocalDateTime.now());
+
+            userSessionDao.save(currentUserSession);
+
+            return currentUserSession;
+        } else
+            throw new LoginException("Please Enter a valid password...!");
+    }
+
+    @Override
+    public String logOutFromUserAccount(String key) throws LoginException {
+        CurrentUserSession validUserSession = userSessionDao.findByUuid(key);
+
+        if (validUserSession == null) {
+            throw new LoginException("user Not Logged In with this number" + validUserSession);
+
+        }
+
+        userSessionDao.delete(validUserSession);
+
+        return "User Logged Out !";
     }
 }

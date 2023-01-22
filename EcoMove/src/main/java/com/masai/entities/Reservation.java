@@ -10,13 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Data
+@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -48,6 +45,5 @@ public class Reservation {
 	private Bus bus;
 
 	@ManyToOne
-	@JoinColumn(name="userId")
 	private User user;
 }

@@ -13,11 +13,11 @@ import lombok.*;
 @AllArgsConstructor
 public class CurrentAdminSession {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer adminId;
+    @Id
+    @Column(unique = true)
+    private Integer adminId;
 
-	private String adminUID;
+    private String uuid;
 
-	private LocalDateTime dateTime;
+    private LocalDateTime dateTime;
 }
