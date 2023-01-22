@@ -86,22 +86,22 @@ http://localhost:8884/swagger-ui/
 ## Following pictures will help to understand flow of the Application and API's of Bus Reservation Portal System
 
 ## Admin Module
-<img width="944" alt="https://www.linkpicture.com/q/Admin_Module_Pic.png">
+<img width="944" src="https://www.linkpicture.com/q/Admin_Module_Pic.png">
 
 ## User Module
-<img width="938" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/UserModule.png">
+<img width="938" src="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/UserModule.png">
 
 ## Route Module
-<img width="941" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/RouteModule.png">
+<img width="941" src="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/RouteModule.png">
 
 ## Bus Module
-<img width="941" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/BusModule.png">
+<img width="941" src="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/BusModule.png">
 
 ## Reservation Module
-<img width="940" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/ReservationModule.png">
+<img width="940" src="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/ReservationModule.png">
 
 ## Feedback Module
-<img width="943" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/FeedBackModule.png">
+<img width="943" src="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/FeedBackModule.png">
    
 
  
