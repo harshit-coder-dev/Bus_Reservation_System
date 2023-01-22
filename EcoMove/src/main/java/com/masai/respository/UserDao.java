@@ -8,6 +8,6 @@ import com.masai.entities.User;
 @Repository
 public interface UserDao extends JpaRepository<User, Integer>{
 
-	public User findByContact(String mobileNumber);
+	public User findByMobileNumber(String mobileNumber);
 	
 }

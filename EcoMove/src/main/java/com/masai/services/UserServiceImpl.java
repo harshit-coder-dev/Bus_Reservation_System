@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User createUser(User user) throws UserException {
 
-		User existingUser = userDao.findByContact(user.getContact());
+		User existingUser = userDao.findByMobileNumber(user.getMobileNumber());
 
 		if (existingUser != null)
 			
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User updateUser(User user, String key) throws UserException {
 
-		CurrentUserSession loggedInUser = userSessionDao.findByUserUID(key);
+		CurrentUserSession loggedInUser = userSessionDao.findByUuid(key);
 
 		if (loggedInUser == null) {
 			
@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User deleteUser(Integer userId, String key) throws UserException, AdminException {
 
-		CurrentAdminSession loggedInAdmin = adminSessionDao.findByAdminUID(key);
+		CurrentAdminSession loggedInAdmin = adminSessionDao.findByUuid(key);
 
 		if (loggedInAdmin == null) {
 			
@@ -78,7 +78,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User viewUserById(Integer userId, String key) throws UserException, AdminException {
 
-		CurrentAdminSession loggedInAdmin = adminSessionDao.findByAdminUID(key);
+		CurrentAdminSession loggedInAdmin = adminSessionDao.findByUuid(key);
 
 		if (loggedInAdmin == null) {
 			
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public List<User> viewUsers(String key) throws UserException, AdminException {
 
-		CurrentAdminSession loggedInAdmin = adminSessionDao.findByAdminUID(key);
+		CurrentAdminSession loggedInAdmin = adminSessionDao.findByUuid(key);
 		
 		if (loggedInAdmin == null) {
 			
