@@ -1,5 +1,5 @@
 
-# Bus Reservation System 
+# Bus Reservation System(EcoMove Bus) 
 <img src="https://media.tenor.com/-r7rOH-I6V8AAAAM/india-overload.gif"  style = "width:90%; height:450px" />
 
 * Bus Reservation System is a full stack project where REST API's are developed using Java and Spring Boot technologies and UI or frontend is developed using HTML,CSS,     JavaScript
