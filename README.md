@@ -101,7 +101,7 @@ http://localhost:8884/swagger-ui/
 <img width="940" src="https://www.linkpicture.com/q/ReservationModule.png">
 
 ## Feedback Module
-<img width="943" src="https://www.linkpicture.com/q//FeedBackModule.png">
+<img width="943" src="https://www.linkpicture.com/q/FeedBackModule.png">
    
 
  
