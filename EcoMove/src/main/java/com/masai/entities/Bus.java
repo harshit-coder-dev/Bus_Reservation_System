@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
@@ -46,12 +47,10 @@ public class Bus {
 	private String routeTo;
 
 	@NotNull(message = "Arrival time cannot be null!")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-	private LocalTime arrivalTime;
+	private String arrivalTime;
 
 	@NotNull(message = "Departure time cannot be null!")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-	private LocalTime departureTime;
+	private String departureTime;
 
 	@NotNull(message = "Total Seats cannot be null!")
 	private Integer seats;

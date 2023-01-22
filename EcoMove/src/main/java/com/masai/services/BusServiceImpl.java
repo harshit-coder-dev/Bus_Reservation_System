@@ -40,7 +40,8 @@ public class BusServiceImpl implements BusService {
         if (route != null) {
             route.getBusList().add(bus);
             bus.setRoute(route);
-            return busRepo.save(bus);
+            busRepo.save(bus);
+            return  bus;
         } else
             throw new BusException("Bus detail is not correct");
     }
