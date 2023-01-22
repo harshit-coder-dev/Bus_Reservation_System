@@ -37,7 +37,7 @@
 # ER Diagram
 
 The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
-<br>![NewER](https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/ER_Diagram.jpg)
+<br>![NewER](https://www.linkpicture.com/q/ER_Diagram.jpg)
 <br>
 <br>
 <br>
