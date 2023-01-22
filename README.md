@@ -86,7 +86,7 @@ http://localhost:8884/swagger-ui/
 ## Following pictures will help to understand flow of the Application and API's of Bus Reservation Portal System
 
 ## Admin Module
-<img width="944" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/Admin_Module_Pic.png">
+<img width="944" alt="https://www.linkpicture.com/q/Admin_Module_Pic.png">
 
 ## User Module
 <img width="938" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/UserModule.png">
