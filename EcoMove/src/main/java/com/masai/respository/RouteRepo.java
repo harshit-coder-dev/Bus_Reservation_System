@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RouteRepo extends JpaRepository<Route,Integer> {
 
-    @Query("from Route where routeFrom=?1 and routeTo=?2")
-    public Route findByRouteFromSourceToDestination(String source,String destination);
+//    @Query("from Route where routeFrom=?1 and routeTo=?2")
+    public Route findByRouteFromAndRouteTo(String routeFrom,String routeTo);
     
 }

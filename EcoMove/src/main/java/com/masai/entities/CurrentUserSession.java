@@ -22,7 +22,7 @@ public class CurrentUserSession {
 	@Column(unique = true)
 	private Integer userId;
 
-	private String userUID;
+	private String uuid;
 
 	private LocalDateTime dateTime;
 }

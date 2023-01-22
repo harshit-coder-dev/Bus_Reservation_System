@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.masai.entities.CurrentAdminSession;
 
 @Repository
-public interface AdminSessionDao extends JpaRepository<CurrentAdminSession, Integer>{
+public interface AdminSessionDao extends JpaRepository<CurrentAdminSession, Integer> {
 
-	public  CurrentAdminSession findByAdminUID(String adminUID);
+    public CurrentAdminSession findByUuid(String uuid);
 
 }
