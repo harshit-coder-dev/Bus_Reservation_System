@@ -19,13 +19,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
+@Getter
 @Entity
 public class User {
 
@@ -50,9 +52,9 @@ public class User {
 	private String password;
 
 	@NotNull(message = "Mobile number cannot be null!")
-	@NotBlank(message = "Mobile number cannot be blank!")
+//	@NotBlank(message = "Mobile number cannot be blank!")
 	@Pattern(regexp = "[6789]{1}[0-9]{9}", message = "Enter valid 10 digit mobile number")
-	@Size(min = 10, max = 10)
+//	@Size(min = 10, max = 10)
 	private String contact;
 
 	@NotNull(message = "Email cannot be null!")

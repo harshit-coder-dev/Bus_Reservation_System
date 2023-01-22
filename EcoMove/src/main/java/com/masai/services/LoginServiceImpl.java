@@ -50,7 +50,7 @@ public class LoginServiceImpl implements LoginService {
             currentUserSession.setUserUID(key);
             currentUserSession.setDateTime(LocalDateTime.now());
             currentUserRepo.save(currentUserSession);
-            return currentUserRepo.toString();
+            return key;
         } else
             throw new LoginException("Please Enter a valid password");
     }
@@ -82,7 +82,7 @@ public class LoginServiceImpl implements LoginService {
 
             currentAdminRepo.save(currentAdminSession);
 
-            return currentAdminSession.toString();
+            return key;
         } else
             throw new LoginException("Please Enter a valid password");
     }

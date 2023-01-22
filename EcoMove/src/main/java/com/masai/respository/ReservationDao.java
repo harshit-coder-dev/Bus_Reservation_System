@@ -12,7 +12,7 @@ import com.masai.entities.Reservation;
 @Repository
 public interface ReservationDao extends JpaRepository<Reservation, Integer>{
 
-	@Query("from Reservation where journeyDate=?1")
+//	@Query("from Reservation where journeyDate=?1")
 	List<Reservation> findbyjourneyDate(LocalDate date);
 
 }

@@ -14,10 +14,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Data
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
@@ -46,12 +47,12 @@ public class Bus {
 	private String routeTo;
 
 	@NotNull(message = "Arrival time cannot be null!")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-	private LocalTime arrivalTime;
+//	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+	private String arrivalTime;
 
 	@NotNull(message = "Departure time cannot be null!")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
-	private LocalTime departureTime;
+//	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+	private String departureTime;
 
 	@NotNull(message = "Total Seats cannot be null!")
 	private Integer seats;
