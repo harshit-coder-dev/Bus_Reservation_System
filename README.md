@@ -33,6 +33,16 @@
 * Feedback Module
 
 
+
+# ER Diagram
+
+The following Diagram depicts the flow of our Entity Relation Diagram to simplify the work flow.
+<br>![NewER](https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/ER_Diagram.jpg)
+<br>
+<br>
+<br>
+
+
 <!-- ============================================  FEATURES ======================================================  -->
 ## Features
 
@@ -76,23 +86,22 @@ http://localhost:8884/swagger-ui/
 ## Following pictures will help to understand flow of the Application and API's of Bus Reservation Portal System
 
 ## Admin Module
-<img width="944" alt="Screenshot (2377)" src="plant-grain-8335\Images\Admin_Module_Pic.png">
+<img width="944" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/Admin_Module_Pic.png">
 
 ## User Module
-<img width="938" alt="Screenshot (2382)" src="plant-grain-8335\Images\UserModule.png">
+<img width="938" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/UserModule.png">
 
 ## Route Module
-<img width="941" alt="Screenshot (2381)" src="plant-grain-8335\Images\RouteModule.png">
+<img width="941" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/RouteModule.png">
 
 ## Bus Module
-<img width="941" alt="Screenshot (2380)" src="plant-grain-8335\Images\BusModule.png">
-
+<img width="941" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/BusModule.png">
 
 ## Reservation Module
-<img width="940" alt="Screenshot (2379)" src="plant-grain-8335\Images\ReservationModule.png">
+<img width="940" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/ReservationModule.png">
 
 ## Feedback Module
-<img width="943" alt="Screenshot (2378)" src="plant-grain-8335\Images\FeedBackModule.png">
+<img width="943" alt="https://github.com/Hartumpa/plant-grain-8335/blob/main/Images/FeedBackModule.png">
    
 
  
