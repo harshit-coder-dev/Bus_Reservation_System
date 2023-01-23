@@ -17,12 +17,12 @@ public class BusController {
     @Autowired
     private BusService busService;
 
-    @PostMapping("/bus/admin")
+    @PostMapping("/bus/admin")    // only route from and route to needed
     public ResponseEntity<Bus> addBus(@Valid @RequestBody Bus bus, @RequestParam(required = false) String key) throws BusException {
 
         Bus newBus = busService.addBus(bus, key);
 
-        return new ResponseEntity<Bus>(newBus, HttpStatus.CREATED);
+        return new ResponseEntity<>(newBus, HttpStatus.CREATED);
     }
 
     @PutMapping("/bus/admin")
