@@ -24,7 +24,7 @@ public class ReservationController {
     private ReservationService reservationService;
 
 
-    @PostMapping("/reservation/user")
+    @PostMapping("/reservation/user")  // only bus and source destinantion required
     public ResponseEntity<Reservation> addReservation(@Valid @RequestBody ReservationDTO reservationDTO, @RequestParam(required = false) String key) throws ReservationException, UserException {
         Reservation savedReservation = reservationService.addReservation(reservationDTO, key);
         return new ResponseEntity<Reservation>(savedReservation, HttpStatus.ACCEPTED);
